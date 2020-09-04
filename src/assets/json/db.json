@@ -1,0 +1,61 @@
+{
+
+    "bookList": [
+        {
+            "id": 1,
+            "name": "War and Peace",
+            "Author": "Leo Tolstoy",
+            "published year": "2003", 
+            "Price in INR": "650",
+            "Number of copies sold": "8000"
+        },
+        {
+            "id": 2,
+            "name": "The Adventures of Huckleberry Finn",
+            "Author": "Mark Twain",
+            "published year": "2006", 
+            "Price in INR": "1050",
+            "Number of copies sold": "12000"
+        },
+        {
+            "id": 1,
+            "name": "An American Tragedy",
+            "Author": "Theodore Dreiser",
+            "published year": "2008", 
+            "Price in INR": "455",
+            "Number of copies sold": "15000"
+        },
+        {
+            "id": 1,
+            "name": "An idealist view of life",
+            "Author": "Dr. S. Radhakrishnan",
+            "published year": "2000", 
+            "Price in INR": "350",
+            "Number of copies sold": "20000"
+        },
+        {
+            "id": 1,
+            "name": "Anand Math",
+            "Author": "Bankim Chandra Chatterjee",
+            "published year": "2014", 
+            "Price in INR": "650",
+            "Number of copies sold": "5000"
+        },
+        {
+            "id": 1,
+            "name": "The Alchemist",
+            "Author": "Paulo Coelho",
+            "published year": "2008", 
+            "Price in INR": "900",
+            "Number of copies sold": "40000"
+        },
+        {
+            "id": 1,
+            "name": "No Spin: My Autobiography",
+            "Author": "Shane Warne",
+            "published year": "2016", 
+            "Price in INR": "150",
+            "Number of copies sold": "1000"
+        }
+    ]
+}

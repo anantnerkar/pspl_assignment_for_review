@@ -1,0 +1,77 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "bookList": [
+    {
+        "id": 1,
+        "name": "War and Peace",
+        "author": "Leo Tolstoy",
+        "publishedYear": "2003", 
+        "price": "650",
+        "numberOfCopiesSold": "8000"
+    },
+    {
+        "id": 2,
+        "name": "The Adventures of Huckleberry Finn",
+        "author": "Mark Twain",
+        "publishedYear": "2006", 
+        "price": "1050",
+        "numberOfCopiesSold": "12000"
+    },
+    {
+        "id": 3,
+        "name": "An American Tragedy",
+        "author": "Theodore Dreiser",
+        "publishedYear": "2008", 
+        "price": "455",
+        "numberOfCopiesSold": "15000"
+    },
+    {
+        "id": 4,
+        "name": "An idealist view of life",
+        "author": "Dr. S. Radhakrishnan",
+        "publishedYear": "2000", 
+        "price": "350",
+        "numberOfCopiesSold": "20000"
+    },
+    {
+        "id": 5,
+        "name": "Anand Math",
+        "author": "Bankim Chandra Chatterjee",
+        "publishedYear": "2014", 
+        "price": "650",
+        "numberOfCopiesSold": "5000"
+    },
+    {
+        "id": 6,
+        "name": "The Alchemist",
+        "author": "Paulo Coelho",
+        "publishedYear": "2008", 
+        "price": "900",
+        "numberOfCopiesSold": "40000"
+    },
+    {
+        "id": 7,
+        "name": "No Spin: My Autobiography",
+        "author": "Shane Warne",
+        "publishedYear": "2016", 
+        "price": "150",
+        "numberOfCopiesSold": "1000"
+    }
+  ]
+}
