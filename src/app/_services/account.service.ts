@@ -11,7 +11,6 @@ import { User } from '@app/_models';
 export class AccountService {
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
-    public bookData = 'http://localhost:3000';
 
     constructor(
         private router: Router,
@@ -22,7 +21,7 @@ export class AccountService {
     }
 
     public getAllBooks(): Observable<any> {
-        return this.http.get(this.bookData + '/bookList');
+        return this.http.get(`${environment.apiUrl}` + '/bookList');
     }
 
     public get userValue(): User {
