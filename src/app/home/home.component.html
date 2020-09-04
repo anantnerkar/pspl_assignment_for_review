@@ -1,6 +1,8 @@
 ﻿<div class="p-4">
-    <h2>Visit the Books Collection</h2>
-    <a routerLink="add" class="btn btn-sm btn-success mb-2">Add Book</a>
+    <h2>Visit the Collection of Books</h2>
+
+    <a routerLink="add" class="btn btn-sm btn-success mb-2" *ngIf="isLoggedIn">Add Book</a>
+    
     <table class="table table-striped">
         <thead>
             <tr>

@@ -7,10 +7,12 @@ import { AccountService } from '@app/_services';
 export class HomeComponent {
     user: User;
     bookList: any=[];
+    public isLoggedIn: boolean;
 
     constructor(private accountService: AccountService) {
         //this.bookList = this.accountService.getAllBooks;
 
+        this.isLoggedIn = true;
         this.accountService.getAllBooks().subscribe(data => {
             console.log("data..", data);
             this.bookList = data;

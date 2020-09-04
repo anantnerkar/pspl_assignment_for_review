@@ -1,0 +1,11 @@
+<div class="fixed-header">
+    <div class="container">
+        <nav>
+            <a class="nav-item nav-link" style="margin-left: 15px; color: #fff;" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+            <a class="nav-item nav-link" style="margin-left: 15px; color: #fff;" routerLink="/users" routerLinkActive="active">Books</a>
+            <a class="nav-item nav-link" style="margin-right: 25px; float: right;" (click)="logout()" *ngIf="!isLoggedIn">Login</a>
+            <a class="nav-item nav-link" style="margin-right: 25px; float: right;" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+        </nav>
+    </div>
+</div>
+
