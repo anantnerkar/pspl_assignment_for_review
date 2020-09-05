@@ -5,7 +5,10 @@ import { first } from 'rxjs/operators';
 
 import { AccountService, AlertService } from '@app/_services';
 
-@Component({ templateUrl: 'add-edit.component.html' })
+@Component({ 
+    templateUrl: 'add-edit.component.html',
+    styleUrls: ['./add-edit.component.scss']
+})
 export class AddEditComponent implements OnInit {
     form: FormGroup;
     id: string;
@@ -32,10 +35,12 @@ export class AddEditComponent implements OnInit {
         }
 
         this.form = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            username: ['', Validators.required],
-            password: ['', passwordValidators]
+            name: ['', Validators.required],
+            author: ['', Validators.required],
+            description: ['', Validators.required],
+            category: ['', Validators.required],
+            publishedYear: ['', Validators.required],
+            price: ['', Validators.required]
         });
 
         if (!this.isAddMode) {

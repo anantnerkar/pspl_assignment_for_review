@@ -16,62 +16,111 @@
   "profile": {
     "name": "typicode"
   },
+  "users": [
+    {
+      "firstName": "anant",
+      "lastName": "nerkar",
+      "username": "anant",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "firstName": "anant1",
+      "lastName": "nerkar",
+      "username": "anant1",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "firstName": "nilam",
+      "lastName": "nerkar",
+      "username": "nil",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "firstName": "kedar",
+      "lastName": "pataki",
+      "username": "kedar",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "abcde@gmail.com",
+      "password": "123456",
+      "id": 4
+    }
+  ],
   "bookList": [
     {
-        "id": 1,
-        "name": "War and Peace",
-        "author": "Leo Tolstoy",
-        "publishedYear": "2003", 
-        "price": "650",
-        "numberOfCopiesSold": "8000"
+      "id": 1,
+      "name": "War and Peace",
+      "author": "Leo Tolstoy",
+      "publishedYear": "2003",
+      "price": "650",
+      "numberOfCopiesSold": "8000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     },
     {
-        "id": 2,
-        "name": "The Adventures of Huckleberry Finn",
-        "author": "Mark Twain",
-        "publishedYear": "2006", 
-        "price": "1050",
-        "numberOfCopiesSold": "12000"
+      "id": 2,
+      "name": "The Adventures of Huckleberry Finn",
+      "author": "Mark Twain",
+      "publishedYear": "2006",
+      "price": "1050",
+      "numberOfCopiesSold": "12000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     },
     {
-        "id": 3,
-        "name": "An American Tragedy",
-        "author": "Theodore Dreiser",
-        "publishedYear": "2008", 
-        "price": "455",
-        "numberOfCopiesSold": "15000"
+      "id": 3,
+      "name": "An American Tragedy",
+      "author": "Theodore Dreiser",
+      "publishedYear": "2008",
+      "price": "455",
+      "numberOfCopiesSold": "15000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     },
     {
-        "id": 4,
-        "name": "An idealist view of life",
-        "author": "Dr. S. Radhakrishnan",
-        "publishedYear": "2000", 
-        "price": "350",
-        "numberOfCopiesSold": "20000"
+      "id": 4,
+      "name": "An idealist view of life",
+      "author": "Dr. S. Radhakrishnan",
+      "publishedYear": "2000",
+      "price": "350",
+      "numberOfCopiesSold": "20000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     },
     {
-        "id": 5,
-        "name": "Anand Math",
-        "author": "Bankim Chandra Chatterjee",
-        "publishedYear": "2014", 
-        "price": "650",
-        "numberOfCopiesSold": "5000"
+      "id": 5,
+      "name": "Anand Math",
+      "author": "Bankim Chandra Chatterjee",
+      "publishedYear": "2014",
+      "price": "650",
+      "numberOfCopiesSold": "5000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     },
     {
-        "id": 6,
-        "name": "The Alchemist",
-        "author": "Paulo Coelho",
-        "publishedYear": "2008", 
-        "price": "900",
-        "numberOfCopiesSold": "40000"
+      "id": 6,
+      "name": "The Alchemist",
+      "author": "Paulo Coelho",
+      "publishedYear": "2008",
+      "price": "900",
+      "numberOfCopiesSold": "40000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     },
     {
-        "id": 7,
-        "name": "No Spin: My Autobiography",
-        "author": "Shane Warne",
-        "publishedYear": "2016", 
-        "price": "150",
-        "numberOfCopiesSold": "1000"
+      "id": 7,
+      "name": "No Spin: My Autobiography",
+      "author": "Shane Warne",
+      "publishedYear": "2016",
+      "price": "150",
+      "numberOfCopiesSold": "1000",
+      "description": "This is book of war and peace",
+      "category": "Novel"
     }
   ]
 }

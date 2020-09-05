@@ -7,7 +7,7 @@ import { AccountService, AlertService } from '@app/_services';
 
 @Component({ 
     templateUrl: 'login.component.html',
-    styleUrls: ['./layout.component.scss'] 
+    styleUrls: ['./login.component.scss'] 
  })
 export class LoginComponent implements OnInit {
     form: FormGroup;
@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
         if (this.form.invalid) {
             return;
         }
-
+//this.f.username.value, this.f.password.value
         this.loading = true;
-        this.accountService.login(this.f.username.value, this.f.password.value)
+        this.accountService.getAccountDetails()
             .pipe(first())
             .subscribe({
                 next: () => {

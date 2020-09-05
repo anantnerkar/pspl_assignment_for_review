@@ -24,12 +24,20 @@ export class AccountService {
         return this.http.get(`${environment.apiUrl}` + '/bookList');
     }
 
+    public getAccountDetails(): Observable<any> {
+        return this.http.get(`${environment.apiUrl}` + 'login');
+      }
+    
+    public postAccountDetails(value): Observable<any> {
+        return this.http.post(`${environment.apiUrl}` + '/users', value);
+      }
+
     public get userValue(): User {
         return this.userSubject.value;
     }
 
     login(username, password) {
-        return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
+        return this.http.post<User>(`${environment.apiUrl}/users`, { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));
@@ -76,10 +84,6 @@ export class AccountService {
     delete(id: string) {
         return this.http.delete(`${environment.apiUrl}/users/${id}`)
             .pipe(map(x => {
-                // auto logout if the logged in user deleted their own record
-                if (id == this.userValue.id) {
-                    this.logout();
-                }
                 return x;
             }));
     }

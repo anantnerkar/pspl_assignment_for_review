@@ -1,0 +1,55 @@
+.grid-container {
+    width: 30%;
+    margin-left: 420px;
+    margin-top: 100px;
+}
+
+.form {
+   // display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-auto-flow: row;
+    grid-gap: .8em;
+    background: #eee;
+    padding: 1.2em;
+}
+
+.myForm > label  {
+    grid-column: controls;
+    grid-row: auto;
+}
+  
+.myForm > input {
+    grid-column: controls;
+    grid-row: auto;
+    border: none;
+    padding: 1em;
+}
+
+.myForm > button {
+    grid-row: controls;
+    grid-row: auto;
+    border: none;
+    padding: 1em;
+}
+
+.button {
+    margin: 8px;  
+    padding: 3px 10px 3px 10px;
+}
+
+.div-button {
+    background: dodgerblue;
+}
+
+*{  margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    text-align: center; 
+    font-family: '', 
+    cursive;
+}
+
+.login {
+    background-color: dodgerblue;
+    padding: 11px;
+}

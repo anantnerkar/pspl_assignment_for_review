@@ -1,52 +1,137 @@
-﻿<h1 *ngIf="isAddMode">Add Book</h1>
-<h1 *ngIf="!isAddMode">Edit Book</h1>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="firstName">Book Name</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+﻿<!-- <div class="grid-container">
+    <div class="login">
+        Register
+    </div>
+    <div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" placeholder="First Name" formControlName="firstName" class="form-control"
+                    style="margin-left: 10px;" autocomplete="off"
+                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
             </div>
-        </div>
-        <div class="form-group col">
-            <label for="lastName">Author</label>
-            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                <div *ngIf="f.lastName.errors.required">Author is required</div>
+
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="lastName">Last Name</label>
+                <input type="text" placeholder="Last Name" formControlName="lastName" formControlName="lastName"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                    style="margin-left: 10px;" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
             </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" formControlName="username" formControlName="username"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                    style="margin-left: 10px;" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" formControlName="password" formControlName="password"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                    style="margin-left: 10px;" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="div-button">
+        <div class="container" style="text-align: center; padding: 8px;">
+            <button [disabled]="loading" class="btn btn-primary" (click)="onSubmit()">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Register
+            </button>
+            <button type="button" style="margin-left: 10px;" routerLink="../login" class="btn btn-link">Cancel</button>
         </div>
     </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="username">Published Year</label>
-            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                <div *ngIf="f.username.errors.required">Publised Year is required</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label for="password">Price</label>
-            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Price is required</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label for="password">Number of Copies Sold</label>
-            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Number of copies is required</div>
-            </div>
-        </div>
+</div> -->
+
+
+
+<div class="grid-container">
+    <div class="login">
+        <h4 *ngIf="isAddMode">Add Book</h4>
+        <h4 *ngIf="!isAddMode">Edit Book</h4>
     </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Save
-        </button>
-        <button [disabled]="loading" class="btn btn-primary" routerLink="/users">
-            Cancel
-        </button>
-    </div>
-</form>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+
+        <div class="form-group">
+            <label for="name">Book Title1</label>
+            <input type="text" formControlName="name" class="form-control" style="margin-left: 10px;" autocomplete="off"
+                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Book Title is required</div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="author">Author</label>
+            <input type="text" formControlName="author" class="form-control" style="margin-left: 10px;"
+                autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.author.errors }" />
+            <div *ngIf="submitted && f.author.errors" class="invalid-feedback">
+                <div *ngIf="f.author.errors.required">Author is required</div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="description">Short Description</label>
+            <input type="text" formControlName="description" class="form-control" style="margin-left: 10px;"
+                autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">Description is required</div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="category">Category</label>
+            <input type="text" formControlName="category" class="form-control" style="margin-left: 10px;"
+                autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.category.errors }" />
+            <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                <div *ngIf="f.category.errors.required">Category is required</div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px;">
+            <label for="publisedYear">Published Year</label>
+            <input type="text" formControlName="publishedYear" class="form-control" style="margin-left: 10px;"
+                autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.publishedYear.errors }" />
+            <div *ngIf="submitted && f.publishedYear.errors" class="invalid-feedback">
+                <div *ngIf="f.publishedYear.errors.required">Publised Year is required</div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px; margin-bottom: 20px;">
+            <label for="price">Price</label>
+            <input type="text" formControlName="price" class="form-control" style="margin-left: 10px;"
+                autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+            <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                <div *ngIf="f.price.errors.required">Price is required</div>
+            </div>
+        </div>
+
+        <div class="div-button">
+            <div class="container" style="text-align: center; padding: 8px;">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Save
+                </button>
+                <button type="button" [disabled]="loading" style="margin-left: 10px;" class="btn btn-primary"
+                    routerLink="/users">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

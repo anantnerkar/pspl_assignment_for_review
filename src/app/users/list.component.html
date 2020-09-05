@@ -1,38 +1,54 @@
-﻿<h1>Books Collection</h1>
-<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Book</a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th style="width: 10%">Sr. No.</th>
-            <th style="width: 20%">Book Name</th>
-            <th style="width: 20%">Author</th>
-            <th style="width: 10%">Published Year</th>
-            <th style="width: 20%">Price</th>
-            <th style="width: 20%">Number of Copies Sold</th>
-            <th style="width: 20%">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let book of books">
-            <td>{{book.id}}</td>
-            <td>{{book.name}}</td>
-            <td>{{book.author}}</td>
-            <td>{{book.publishedYear}}</td>
-            <td>{{book.price}}</td>
-            <td>{{book.numberOfCopiesSold}}</td>
+﻿
+<div class="list">
+    <table style="width:100%">
+        <caption>
+            <div>
+                <h2 class="heading">Visit the Collection of Books</h2>
+            </div>
+        </caption>
+        <thead>
+            <tr>
+                <th style="width: 10%">Sr. No.</th>
+                <th style="width: 20%">Book Title12</th>
+                <th style="width: 20%">Author</th>
+                <th style="width: 20%">Short Description</th>
+                <th style="width: 10%">Category</th>
+                <th style="width: 10%">Published Year</th>
+                <th style="width: 10%">Price</th>
+                <th style="width: 20%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of bookList">
+                <td style="width: 10%">{{book.id}}</td>
+                <td style="width: 20%">{{book.name}}</td>
+                <td style="width: 20%">{{book.author}}</td>
+                <td style="width: 20%">{{book.description}}</td>
+                <td style="width: 10%">{{book.category}}</td>
+                <td style="width: 10%">{{book.publishedYear}}</td>
+                <td style="width: 10%">{{book.price}}</td>
 
-            <td style="white-space: nowrap">
-                <a routerLink="edit/{{book.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
-                <button (click)="deleteBook(book.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="book.isDeleting">
-                    <span *ngIf="book.isDeleting" class="spinner-border spinner-border-sm"></span>
-                    <span *ngIf="!book.isDeleting">Delete</span>
-                </button>
-            </td>
-        </tr>
-        <tr *ngIf="!books">
-            <td colspan="4" class="text-center">
-                <span class="spinner-border spinner-border-lg align-center"></span>
-            </td>
-        </tr>
-    </tbody>
-</table>
+                <td style="white-space: nowrap; width: 20%">
+                    <!-- <a routerLink="edit/{{book.id}}" class="btn btn-sm btn-primary mr-1">Edit</a> -->
+                    <button routerLink="edit/{{book.id}}" (click)="editBook(book)" 
+                    class="btn btn-sm btn-danger btn-delete-user">Edit</button>
+
+                    <button (click)="deleteBook(book.id)" class="btn btn-sm btn-danger btn-delete-user">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            <!-- <tr *ngIf="!books">
+        <td colspan="4" class="text-center">
+            <span class="spinner-border spinner-border-lg align-center"></span>
+        </td>
+    </tr> -->
+        </tbody>
+    </table>
+    <div>
+        <!-- <a routerLink="add" class="btn btn-sm btn-success mb-2">Add New Book</a> -->
+        <div class="add">
+            <button type="button" class="add-button" (click)="addNewBook()">Add New Book</button>
+        </div>
+    </div>
+</div>
