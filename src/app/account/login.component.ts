@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 import { AccountService, AlertService } from '@app/_services';
-
+import { } from '../'
 import { LogIn } from '../store/actions/auth.actions';
 import { AppState, selectAuthState } from '../store/app.states';
 import { Observable } from 'rxjs';
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     getState: Observable<any>;
+    errorMessage: string | null;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -31,12 +32,40 @@ export class LoginComponent implements OnInit {
         this.getState = this.store.select(selectAuthState);
     }
 
-    ngOnInit() {
-        this.form = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
-        });
-    }
+
+
+  ngOnInit() {
+    this.getState.subscribe((state) => {
+      this.errorMessage = state.errorMessage;
+    });
+    this.errorMessage = null;
+
+    console.log("this.errorMessage..", this.errorMessage);
+
+    this.form = this.formBuilder.group({
+        username: ['', Validators.required],
+        password: ['', Validators.required]
+    });
+
+  }
+
+
+    // ngOnInit() {
+    //     this.form = this.formBuilder.group({
+    //         username: ['', Validators.required],
+    //         password: ['', Validators.required]
+    //     });
+    //     this.getErrorMessage();
+    // }
+
+    // getErrorMessage() {
+    //     this.getState.subscribe((state) => {
+    //         this.errorMessage = state.errorMessage;
+    //         //this.alertService.error(state.errorMessage);
+    //       });
+    //       this.errorMessage = null;
+    //       //this.alertService.error("");
+    // }
 
     // convenience getter for easy access to form fields
     get f() { return this.form.controls; }

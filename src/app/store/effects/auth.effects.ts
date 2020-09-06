@@ -27,8 +27,8 @@ export class AuthEffects {
         switchMap(payload => {
             return this.authService.login({ username: payload.username, password: payload.password }).pipe(
                 map((user) => {
-                    if (user) {
-                        return new LogInSuccess({ email: payload.username });
+                    if (user.length > 0) {
+                        return new LogInSuccess({ username: payload.username });
                     } else {
                         return new LogInFailure({ error: 'Invalid credentials' });
                     }

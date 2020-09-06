@@ -29,7 +29,7 @@ export function reducer(state = initialState, action: All): State {
         case AuthActionTypes.LOGIN_FAILURE: {
             return {
                 ...state,
-                errorMessage: 'Incorrect email and/or password.'
+                errorMessage: 'Incorrect username and/or password.'
             };
         }
         case AuthActionTypes.REGISTER_SUCCESS: {
@@ -45,7 +45,7 @@ export function reducer(state = initialState, action: All): State {
         case AuthActionTypes.REGISTER_FAILURE: {
             return {
                 ...state,
-                errorMessage: 'That email is already in use.'
+                errorMessage: 'That username is already in use.'
             };
         }
         case AuthActionTypes.LOGOUT: {

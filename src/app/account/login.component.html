@@ -2,6 +2,12 @@
     <div class="login">
         Login
     </div>
+    <div *ngIf="errorMessage">
+        <div class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+    </div>
+    
     <div>
         <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
             <div class="form-group">
