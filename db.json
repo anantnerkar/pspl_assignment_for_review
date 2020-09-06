@@ -49,6 +49,34 @@
       "email": "abcde@gmail.com",
       "password": "123456",
       "id": 4
+    },
+    {
+      "user": {
+        "username": "anant",
+        "password": "123456"
+      },
+      "id": 5
+    },
+    {
+      "user": {
+        "username": "nabha",
+        "password": "123456"
+      },
+      "id": 6
+    },
+    {
+      "firstName": "sagar",
+      "lastName": "nagane",
+      "username": "sagarN",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "firstName": "qwerty",
+      "lastName": "uiop",
+      "username": "qwerty",
+      "password": "123456",
+      "id": 8
     }
   ],
   "bookList": [

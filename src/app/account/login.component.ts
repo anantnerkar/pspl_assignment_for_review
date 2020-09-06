@@ -2,25 +2,34 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
 
 import { AccountService, AlertService } from '@app/_services';
 
-@Component({ 
+import { LogIn } from '../store/actions/auth.actions';
+import { AppState, selectAuthState } from '../store/app.states';
+import { Observable } from 'rxjs';
+
+@Component({
     templateUrl: 'login.component.html',
-    styleUrls: ['./login.component.scss'] 
- })
+    styleUrls: ['./login.component.scss']
+})
 export class LoginComponent implements OnInit {
     form: FormGroup;
     loading = false;
     submitted = false;
+    getState: Observable<any>;
 
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
-        private alertService: AlertService
-    ) { }
+        private alertService: AlertService,
+        private store: Store<AppState>
+    ) {
+        this.getState = this.store.select(selectAuthState);
+    }
 
     ngOnInit() {
         this.form = this.formBuilder.group({
@@ -42,20 +51,29 @@ export class LoginComponent implements OnInit {
         if (this.form.invalid) {
             return;
         }
-//this.f.username.value, this.f.password.value
+        //this.f.username.value, this.f.password.value
         this.loading = true;
-        this.accountService.getAccountDetails()
-            .pipe(first())
-            .subscribe({
-                next: () => {
-                    // get return url from query parameters or default to home page
-                    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    this.router.navigateByUrl(returnUrl);
-                },
-                error: error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                }
-            });
+        // this.accountService.getAccountDetails()
+        //     .pipe(first())
+        //     .subscribe({
+        //         next: () => {
+        //             // get return url from query parameters or default to home page
+        //             const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        //             this.router.navigateByUrl(returnUrl);
+        //         },
+        //         error: error => {
+        //             this.alertService.error(error);
+        //             this.loading = false;
+        //         }
+        //     });
+
+
+        const payload = {
+            username: this.f.username.value,
+            password: this.f.password.value
+        };
+        console.log("payload..", payload);
+        this.store.dispatch(new LogIn(payload));
+
     }
 }
